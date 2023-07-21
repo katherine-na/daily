@@ -1,31 +1,38 @@
-const App = () => {
-  return (
-    <div>
-      <header>
-        <div className="flex justify-between">
-          <h1>Things to do</h1>
-          <button>mode</button>
-        </div>
-        <form className="flex items-center gap-4 overflow-hidden rounded-md bg-white py4- px-4">
-          <span className="inline-block h-5 w-5 rounded-full border-2"></span>
-          <input type="text" className="w-full text-gray-400 outline-none" placeholder="Create a new todo..."/>
-        </form>
-      </header>
-      <article className="flex gap-4 border-b border-b-gray-400">
-        <button>circulo</button>
-        <p>Complete Course</p>
-        <button>tache</button>
-      </article>
+import { useState } from 'react';
+import Header from './components/Header';
+import TodoComplete from './components/TodoComplete';
+import TodoCreate from './components/TodoCreate';
+import TodoFilter from './components/TodoFilter';
+import TodoList from './components/TodoList';
 
-      <section className="container mx-auto px-4">
-        <div className="bg-white p-4 flex justify-center gap-4">
-          <button className="text-blue-500">All</button>
-          <button className="hover:text-blue-500" >Active</button>
-          <button className="hover:text-blue-500">Complete</button>
+const initialStateTodos = [
+    {
+        id: 1,
+        title: 'Go to the gym',
+        completed: 'true',
+    },
+    {
+        id: 2,
+        title: 'Go to the gym',
+        completed: 'false',
+    },
+];
+
+const App = () => {
+    const [todos, setTodos] = useState(initialStateTodos);
+
+    return (
+        <div className="min-h-screen bg-gray-300 bg-[url('./assets/images/bg-mobil.jpg')] bg-contain bg-no-repeat">
+            <Header />
+            <main className="container mx-auto mt-8 px-4 ">
+                <TodoCreate />
+                <TodoList todos={todos} />
+                <TodoComplete />
+                <TodoFilter />
+            </main>
+            <footer className="mt-8 text-center">Drag and drop to reorder list</footer>
         </div>
-      </section>
-    </div>
-  )
-}
+    );
+};
 
 export default App;
