@@ -16,8 +16,7 @@ const Header = () => {
     return (
         <header className="container mx-auto px-4 pt-8">
             <div className="flex justify-between">
-                <h1 className="text-white text-3x1 font-semibold uppercase tracking-[]0.3em">Things to do</h1>
-                <button onClick={() => setDarkMode(!darkMode)}>{darkMode ? <SunIcon /> : <MoonIcon />}</button>
+                <h1 className="text-white text-4xl font-semibold uppercase tracking-[]0.3em">Things to do</h1>
             </div>
         </header>
     );
