@@ -63,7 +63,7 @@ const App = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-300 bg-[url('./assets/images/bg-mobil.jpg')] bg-contain bg-no-repeat">
+        <div className="min-h-screen bg-gray-300">
             <Header />
             <main className="container mx-auto mt-8 px-4 ">
                 <TodoCreate createTodo={createTodo} />
@@ -71,7 +71,6 @@ const App = () => {
                 <TodoComplete computedItemsLeft={computedItemsLeft} clearComplete={clearComplete} />
                 <TodoFilter changeFilter={changeFilter} />
             </main>
-            <footer className="mt-8 text-center">Drag and drop to reorder list</footer>
         </div>
     );
 };
